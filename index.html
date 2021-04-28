@@ -9,17 +9,43 @@
     <link rel="stylesheet" href="css/style.css">  
     <!-- Collega html e font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- Serve ad utilizzare AJAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <!-- Collega html e Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- Titolo html -->
     <title>Document</title>
 </head>
 <body>
-    
-    <!-- Collega html a day.js per mettere le date -->
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <!-- Permette di usare jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <div id="root">
+
+        <!-- INIZIO HEADER -->
+        <header>
+            <div class="logo">
+                <img src="img/download.png" alt="">
+            </div>
+        </header>
+        <!-- FINE HEADER -->
+
+        <!-- INIZIO MAIN -->
+        <main>
+
+            <div class="cd-container">
+                <!-- SINGLE CD -->
+                <div v-for="cd in cds" class="cd">
+                    <img :src="cd.poster" alt="">
+                    <div class="cd-title">{{ cd.title }}</div>
+                    <div class="cd-author">{{ cd.author }}</div>
+                    <div class="cd-year">{{ cd.year }}</div>
+                </div>
+                <!-- FINE SINGLE CD -->
+
+            </div>
+
+        </main>
+        <!-- FINE MAIN -->
+
+    </div>
     <!-- Collega html a javascript -->
     <script type="text/javascript" src="js/script.js"></script>
 
